@@ -9,7 +9,7 @@
   <title>TRLO</title>
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="./static/css/bootstrap-4.4.1.css">
+  <link rel="stylesheet" href="./web/static/css/bootstrap-4.4.1.css">
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -36,28 +36,28 @@
   
   
   
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./web/static/css/bulma.min.css">
+  <link rel="stylesheet" href="./web/static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./web/static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./web/static/css/fontawesome.all.min.css">
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/logo.webp">
+  <link rel="stylesheet" href="./web/static/css/index.css">
+  <link rel="icon" href="./web/static/images/logo.webp">
 
   
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
-  <script src="./static/js/app.js"></script>
-  <script src="./static/js/video_comparison.js"></script>
+  <script defer src="./web/static/js/fontawesome.all.min.js"></script>
+  <script src="./web/static/js/bulma-carousel.min.js"></script>
+  <script src="./web/static/js/bulma-slider.min.js"></script>
+  <script src="./web/static/js/index.js"></script>
+  <script src="./web/static/js/app.js"></script>
+  <script src="./web/static/js/video_comparison.js"></script>
 
-  <link rel="stylesheet" href="./static/css/dics.original.css">
-  <script src="./static/js/event_handler.js"></script>
-  <script src="./static/js/dics.original.js"></script>
+  <link rel="stylesheet" href="./web/static/css/dics.original.css">
+  <script src="./web/static/js/event_handler.js"></script>
+  <script src="./web/static/js/dics.original.js"></script>
 </head>
 <body>
 
@@ -67,7 +67,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title" style="margin-bottom: 0"><img src="static/images/logo.png" width="80">   <strong>TRLO</strong></h1>
+          <h1 class="title is-1 publication-title" style="margin-bottom: 0"><img src="web/static/images/logo.png" width="80">   <strong>TRLO</strong></h1>
           <br>
           <h2 class="title is-3 publication-title" style="margin-top: 0; margin-bottom: 0">An Efficient LiDAR Odometry with 3D Dynamic Object Tracking and Removal</h2>
           <!-- <br> -->
@@ -150,7 +150,7 @@
     <div class="hero-body">
       <div style="width: 70%; height: 70%; margin: 0 auto; display: flex; justify-content: center; align-items: center;">
         <video id="teaser" autoplay muted loop style="width: 100%; height: 100%;">
-          <source src="resources/teaser_nerf-on-the-go.mp4" type="video/mp4">
+          <source src="web/resources/teaser_nerf-on-the-go.mp4" type="video/mp4">
         </video>
       </div> -->
       <!-- <img class="rounded" src="./media/nice-slam/teaser.png" > -->
@@ -168,7 +168,7 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-full-width">
       
-          <video class="video" width="80%" id="xyalias6" loop playsinline autoplay muted src="resources/yard_high_pj.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+          <video class="video" width="80%" id="xyalias6" loop playsinline autoplay muted src="web/resources/yard_high_pj.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
           <canvas height=0 class="videoMerge" id="xyalias6Merge"></canvas>
         </div>
       </div>
@@ -265,7 +265,7 @@
         <h2 class="title is-3" style="margin-top: -20px">Method</h2>
 
         <div style="width: 100%; margin: 0 auto; display: flex; justify-content: center;">
-          <img src="./resources/pipeline.png" style="width: 150%;">
+          <img src="./web/resources/pipeline.png" style="width: 150%;">
         </div>
         <div class="content has-text-justified">
           <p style="margin-top: 30px">
@@ -290,7 +290,7 @@
     <div class="columns is-centered ">
       <div class="column is-full-width">
         <h2 class="title is-3 has-text-centered" style="margin-top: -30px"><i>On-the-go</i> Dataset</h2>
-        <video class="video" controls muted autoplay loop src="resources/on-the-go.mp4"></video>
+        <video class="video" controls muted autoplay loop src="web/resources/on-the-go.mp4"></video>
         <div class="content has-text-justified">
           <p>
             To rigorously evaluate our approach in real-world settings, we captured a dataset that contains 12 casually captured sequences, including 10 outdoor and 2 indoor scenes. 
@@ -329,11 +329,11 @@
         </div>
         
         <div class="hero-body">
-          <img class="rounded" src="./resources/localization.png" >
+          <img class="rounded" src="./web/resources/localization.png" >
         </div>
 
         <div class="hero-body">
-          <img class="rounded" src="./resources/trajectory.png" >
+          <img class="rounded" src="./web/resources/trajectory.png" >
         </div>
 
         <br>
@@ -364,7 +364,7 @@
         </div>
         
         <div class="hero-body">
-          <img class="rounded" src="./resources/mapping.png" >
+          <img class="rounded" src="./web/resources/mapping.png" >
         </div>
 
         <h3 class="title is-4">Quantitative</h3>
@@ -380,7 +380,7 @@
         </div>
         
         <div class="hero-body">
-          <img class="rounded" src="./resources/mapping2.png" >
+          <img class="rounded" src="./web/resources/mapping2.png" >
         </div>
 
         <br>
@@ -417,13 +417,13 @@
         </div>
         
         <div class="hero-body">
-          <img class="rounded" src="./resources/ablation1.png" >
+          <img class="rounded" src="./web/resources/ablation1.png" >
         </div>
         <div class="hero-body">
-          <img class="rounded" src="./resources/ablation2.png" >
+          <img class="rounded" src="./web/resources/ablation2.png" >
         </div>
         <div class="hero-body">
-          <img class="rounded" src="./resources/ablation3.png" >
+          <img class="rounded" src="./web/resources/ablation3.png" >
         </div>
 
         <br>
@@ -450,12 +450,12 @@
         </div>
         
         <div class="content has-text-centered" style="width: 80%; display: flex; justify-content: center; align-items: center">
-          <video class="video" width="100%" id="xyalias1" loop playsinline autoplay muted src="resources/bellevue_pj.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+          <video class="video" width="100%" id="xyalias1" loop playsinline autoplay muted src="web/resources/bellevue_pj.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
           <canvas height=0 class="videoMerge" id="xyalias1Merge" style="width: 80%;"></canvas>
         </div>
         
         <div class="content has-text-centered" style="width: 80%; display: flex; justify-content: center; align-items: center">
-          <video class="video" width="100%" id="xyalias2" loop playsinline autoplay muted src="resources/rigi_pj.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+          <video class="video" width="100%" id="xyalias2" loop playsinline autoplay muted src="web/resources/rigi_pj.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
           <canvas height=0 class="videoMerge" id="xyalias2Merge" style="width: 80%;"></canvas>
         </div>
         
@@ -469,11 +469,11 @@
         </div>
 
         <div class="content has-text-centered" style="width: 80%; display: flex; justify-content: center; align-items: center">
-          <video class="video" width="100%" id="xyalias9" loop playsinline autoplay muted src="resources/bahnhof_pj.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+          <video class="video" width="100%" id="xyalias9" loop playsinline autoplay muted src="web/resources/bahnhof_pj.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
           <canvas height=0 class="videoMerge" id="xyalias9Merge" style="width: 80%;"></canvas>
         </div>
         <div class="content has-text-centered" style="width: 80%; display: flex; justify-content: center; align-items: center">
-          <video class="video" width="100%" id="xyalias10" loop playsinline autoplay muted src="resources/polybahn_pj.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+          <video class="video" width="100%" id="xyalias10" loop playsinline autoplay muted src="web/resources/polybahn_pj.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
           <canvas height=0 class="videoMerge" id="xyalias10Merge" style="width: 80%;"></canvas>
         </div>
 
@@ -511,10 +511,10 @@
               </li>
           </ul>
           <div class="b-dics">
-              <img src="resources/self/half_bahnhof/nerfw.png" alt="NeRF-W">
-              <img src="resources/self/half_bahnhof/robust.png" alt="RobustNeRF">
-              <img src="resources/self/half_bahnhof/ours.png" alt="NeRF On-the-go(ours)">
-              <img src="resources/self/half_bahnhof/gt.png" alt="GT">
+              <img src="web/resources/self/half_bahnhof/nerfw.png" alt="NeRF-W">
+              <img src="web/resources/self/half_bahnhof/robust.png" alt="RobustNeRF">
+              <img src="web/resources/self/half_bahnhof/ours.png" alt="NeRF On-the-go(ours)">
+              <img src="web/resources/self/half_bahnhof/gt.png" alt="GT">
           </div>
         </div>
 
