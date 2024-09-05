@@ -1,4 +1,4 @@
-# DeaR-DLO: Direct LiDAR Odometry with 3D Dynamic Object Detection and Removal
+# TRLO: Direct LiDAR Odometry with 3D Dynamic Object Tracking and Removal
 
 This is the repository that contains source code for the [TRLO website](https://yaepiii.github.io/TRLO/).
 
