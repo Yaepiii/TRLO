@@ -24,7 +24,7 @@ Our system has been tested extensively on Ubuntu 20.04 Focal with ROS Noetic, al
 - Point Cloud Library >= 1.10.0
 - Eigen >= 3.3.7
 - Cuda 11.3
-- cudnn-8.2.1
+- Cudnn 8.2.1
 - TensorRT 8.5.3.1
 
 Installing the binaries from Aptitude should work though:
