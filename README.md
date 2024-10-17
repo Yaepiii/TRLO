@@ -2,7 +2,7 @@
 
 The official implementation of TRLO (An Efficient LiDAR Odometry with 3D Dynamic Object Tracking and Removal), an accurate LiDAR odometry approach targeted for dynamic environments. TRLO can provide continuous object tracking and accurate localization results while preserving the keyframe selection mechanism in the odometry system. This work is submitted for IEEE T-IM.
 
-![Video](./web/resources/TRLO.mp4)
+![Video](./web/resources/TRLO.gif)
 
 If you think our work useful for your research, please cite:
 
@@ -20,6 +20,7 @@ Our system has been tested extensively on Ubuntu 20.04 Focal with ROS Noetic, al
 - Point Cloud Library >= 1.10.0
 - Eigen >= 3.3.7
 - Cuda 11.3
+- cudnn-8.2.1
 - TensorRT 8.5.3.1
 
 Installing the binaries from Aptitude should work though:
@@ -27,6 +28,13 @@ Installing the binaries from Aptitude should work though:
 ```
 sudo apt install libomp-dev libpcl-dev libeigen3-dev 
 ```
+
+You should replace the path in line 61 of ‘CMakeList.txt’ with your TensorRT-8.5.3.1 installation path, such as:
+
+```
+set(TENSORRT_ROOT /home/jyp/3rdparty/TensorRT-8.5.3.1)
+```
+
 ### Building
 
 You can use the following command to build the project:
@@ -58,6 +66,8 @@ rosbag play your_test.bag
 
 ## :clipboard: Evaluation
 
+### Services
+
 To save TRLO's generated map into .pcd format, call the following service:
 
 ```bash
@@ -69,6 +79,16 @@ To save the trajectory in KITTI format, call the following service:
 ```bash
 rosservice call /robot/dlo_odom/save_traj SAVE_PAT
 ```
+
+### Results
+
+![localization](./web/resources/localization.png)
+
+![trajectory](./web/resources/trajectory.png)
+
+![mapping](./web/resources/mapping.png)
+
+For more results, please refer to our [paper]()
 
 ## :rose: Acknowledgements
 

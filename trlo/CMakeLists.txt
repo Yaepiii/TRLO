@@ -58,7 +58,7 @@ set(CUDA_TOOLKIT_ROOT_DIR /usr/local/cuda-11.3)
 set(CUDA_INCLUDE_DIRS ${CUDA_TOOLKIT_ROOT_DIR}/${CUDA_INSTALL_TARGET_DIR}/include)
 
 # TENSORRT install path
-set(TENSORRT_ROOT /home/jyp/3rdparty/TensorRT-8.5.3.1)
+set(TENSORRT_ROOT /your/TensorRT-8.5.3.1/path)
 set(TENSORRT_INCLUDE_DIRS ${TENSORRT_ROOT}/include/)
 set(TENSORRT_LIBRARY_DIRS ${TENSORRT_ROOT}/lib)
 
