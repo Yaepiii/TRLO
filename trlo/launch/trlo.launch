@@ -19,16 +19,13 @@ Contact: jiayanpeng@sia.cn
   <!--ground robot/hk1/hk3/hk4-->
   <!-- <arg name="pointcloud_topic" default="/velodyne_points"/>
   <arg name="imu_topic" default="/mynteye/imu/data_raw"/> -->
-  <!--kitti07-->
+  <!--kitti-->
   <arg name="pointcloud_topic" default="/kitti/velo/pointcloud"/>
   <arg name="imu_topic" default="/kitti/oxts/imu"/>
-  <!--kitti00/05-->
-  <!-- <arg name="pointcloud_topic" default="/points_raw"/>
-  <arg name="imu_topic" default="/imu_raw"/> -->
 
   <!-- <node ns="$(arg robot_namespace)" name="pointpillars_node" pkg="trlo" type="pointpillars_node" output="screen" clear_params="true">
-    <param name="Model_File_Dir" type="string" value="/home/jyp/3D_LiDAR_SLAM/trlo_ws/src/trlo/model/pointpillars/pointpillar.onnx"/>
-    <param name="SavaData_File" type="string" value="/home/jyp/3D_LiDAR_SLAM/trlo_ws/src/trlo/data/my.bin"/>
+    <param name="Model_File_Dir" type="string" value="$(find trlo)/model/pointpillars/pointpillar.onnx"/>
+    <param name="SavaData_File" type="string" value="$(find trlo)/data/my.bin"/>
 
 
     <remap from="$(arg pointcloud_topic)" to="~pointcloud"/>
@@ -39,8 +36,8 @@ Contact: jiayanpeng@sia.cn
   </node> -->
 
   <node ns="$(arg robot_namespace)" name="centerpp_node" pkg="trlo" type="centerpp_node" output="screen" clear_params="true">
-    <param name="Model_File_Dir" type="string" value="/home/jyp/3D_LiDAR_SLAM/trlo_ws/src/trlo/model/center_pointpillars/"/>
-    <param name="SavaData_File" type="string" value="/home/jyp/3D_LiDAR_SLAM/trlo_ws/src/trlo/data/my.bin"/>
+    <param name="Model_File_Dir" type="string" value="$(find trlo)/model/center_pointpillars/"/>
+    <param name="SavaData_File" type="string" value="$(find trlo)/data/my.bin"/>
 
     <!-- Load parameters -->
     <rosparam file="$(find trlo)/cfg/center_pp.yaml" command="load"/>
