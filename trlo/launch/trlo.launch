@@ -1,0 +1,107 @@
+<!-- 
+  
+  Copyright (c) 2024, Shenyang Institute of Automation, Chinese Academy of Sciences
+
+Authors: Yanpeng Jia
+Contact: jiayanpeng@sia.cn 
+
+-->
+
+
+<launch>
+
+  <arg name="robot_namespace" default="robot"/>
+  <arg name="rviz" default="true"/>
+
+  <!--hk5-->
+  <!-- <arg name="pointcloud_topic" default="/velodyne_points_0"/>
+  <arg name="imu_topic" default="/imu/data"/> -->
+  <!--ground robot/hk1/hk3/hk4-->
+  <!-- <arg name="pointcloud_topic" default="/velodyne_points"/>
+  <arg name="imu_topic" default="/mynteye/imu/data_raw"/> -->
+  <!--kitti07-->
+  <arg name="pointcloud_topic" default="/kitti/velo/pointcloud"/>
+  <arg name="imu_topic" default="/kitti/oxts/imu"/>
+  <!--kitti00/05-->
+  <!-- <arg name="pointcloud_topic" default="/points_raw"/>
+  <arg name="imu_topic" default="/imu_raw"/> -->
+
+  <!-- <node ns="$(arg robot_namespace)" name="pointpillars_node" pkg="trlo" type="pointpillars_node" output="screen" clear_params="true">
+    <param name="Model_File_Dir" type="string" value="/home/jyp/3D_LiDAR_SLAM/trlo_ws/src/trlo/model/pointpillars/pointpillar.onnx"/>
+    <param name="SavaData_File" type="string" value="/home/jyp/3D_LiDAR_SLAM/trlo_ws/src/trlo/data/my.bin"/>
+
+
+    <remap from="$(arg pointcloud_topic)" to="~pointcloud"/>
+
+
+    <remap from="~pointcloud_static" to="cpp/centerpp_node/pointcloud_static"/>
+    <remap from="~boxes" to="cpp/centerpp_node/pose"/>
+  </node> -->
+
+  <node ns="$(arg robot_namespace)" name="centerpp_node" pkg="trlo" type="centerpp_node" output="screen" clear_params="true">
+    <param name="Model_File_Dir" type="string" value="/home/jyp/3D_LiDAR_SLAM/trlo_ws/src/trlo/model/center_pointpillars/"/>
+    <param name="SavaData_File" type="string" value="/home/jyp/3D_LiDAR_SLAM/trlo_ws/src/trlo/data/my.bin"/>
+
+    <!-- Load parameters -->
+    <rosparam file="$(find trlo)/cfg/center_pp.yaml" command="load"/>
+
+    <!-- Subscriptions -->
+    <remap from="~pointcloud" to="$(arg pointcloud_topic)"/>
+    <remap from="~odom" to="trlo/odom_node/odom"/>
+
+    <!-- Publications -->
+    <remap from="~pointcloud_static" to="cpp/centerpp_node/pointcloud_static"/>
+    <remap from="~pointcloud_raw" to="cpp/centerpp_node/pointcloud_raw"/>
+    <remap from="~box" to="cpp/centerpp_node/box"/>
+    <remap from="~dynamic_box" to="cpp/centerpp_node/dynamic_box"/>
+    <remap from="~pointcloud_cluster" to="cpp/centerpp_node/pointcloud_cluster"/>
+    <remap from="~centerpoint_vel" to="cpp/centerpp_node/centerpoint_vel"/>
+    <remap from="~tracking_center" to="cpp/centerpp_node/tracking_center"/>
+    <remap from="~object_vel_arrows" to="cpp/centerpp_node/object_vel_arrows"/>
+    <remap from="~box_markers" to="cpp/centerpp_node/box_markers"/>
+    <remap from="~center_markers" to="cpp/centerpp_node/center_markers"/>
+
+  </node>
+
+
+
+  <!-- TRLO Odometry Node -->
+  <node ns="$(arg robot_namespace)" name="trlo_odom" pkg="trlo" type="trlo_odom_node" output="screen" clear_params="true">
+
+    <!-- Load parameters -->
+    <rosparam file="$(find trlo)/cfg/trlo.yaml" command="load"/>
+    <rosparam file="$(find trlo)/cfg/params.yaml" command="load"/>
+
+    <!-- Subscriptions -->
+    <remap from="~pointcloud" to="cpp/centerpp_node/pointcloud_static"/>
+    <remap from="~imu" to="$(arg imu_topic)"/>
+    <remap from="~box" to="cpp/centerpp_node/box"/>
+
+    <!-- Publications -->
+    <remap from="~odom" to="trlo/odom_node/odom"/>
+    <remap from="~pose" to="trlo/odom_node/pose"/>
+    <remap from="~kfs" to="trlo/odom_node/odom/keyframe"/>
+    <remap from="~keyframe" to="trlo/odom_node/pointcloud/keyframe"/>
+    <remap from="~trajectory" to="trlo/odom_node/trajectory"/>
+    <remap from="~robot" to="trlo/odom_node/robot"/>
+
+  </node>
+
+  <!-- TRLO Mapping Node -->
+  <node ns="$(arg robot_namespace)" name="trlo_map" pkg="trlo" type="trlo_map_node" output="screen" clear_params="true">
+
+    <!-- Load parameters -->
+    <rosparam file="$(find trlo)/cfg/trlo.yaml" command="load"/>
+
+    <!-- Subscriptions -->
+    <remap from="~keyframes" to="trlo/odom_node/pointcloud/keyframe"/>
+
+    <!-- Publications -->
+    <remap from="~map" to="trlo/map_node/map"/>
+
+  </node>
+
+  <!-- RViz -->
+  <node pkg="rviz" type="rviz" name="trlo_rviz" args="-d $(find trlo)/launch/trlo.rviz" respawn ="true"/>
+
+</launch>

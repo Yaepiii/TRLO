@@ -1,0 +1,27 @@
+#####################################################################################
+#                                                                                   #
+# Copyright (c) 2024, Shenyang Institute of Automation, Chinese Academy of Sciences #
+#                                                                                   #
+# Authors: Yanpeng Jia                                                              #
+# Contact: jiayanpeng@sia.cn                                                        #
+#                                                                                   #
+#####################################################################################
+
+trlo:
+
+  version: 1.0.0
+
+  adaptiveParams: true
+
+  imu: false
+  gravityAlign: false
+  ground: true
+
+  odomNode:
+    odom_frame: odom
+    child_frame: base_link
+
+  mapNode:
+    publishFullMap: true
+    publishFreq: 1.0
+    leafSize: 0.25
