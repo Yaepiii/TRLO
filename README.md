@@ -33,7 +33,7 @@ Installing the binaries from Aptitude should work though:
 sudo apt install libomp-dev libpcl-dev libeigen3-dev 
 ```
 
-You should replace the path in line 61 of ‘CMakeList.txt’ with your TensorRT-8.5.3.1 installation path, such as:
+You should replace the path in line 61 of `CMakeList.txt` with your TensorRT-8.5.3.1 installation path, such as:
 
 ```
 set(TENSORRT_ROOT /home/jyp/3rdparty/TensorRT-8.5.3.1)
@@ -55,7 +55,7 @@ catkin_make
 
 ## :running: Run
 
-According to the dataset you want to test, you can modify the parameter values of 'pointcloud_topic' and 'imu_topic' in trlo.launch. If an IMU is not being used, set the trlo/imu ROS param to false in cfg/trlo.yaml. However, if IMU data is available, please allow TRLO to calibrate and gravity align for three seconds before moving. Note that the current implementation assumes that LiDAR and IMU coordinate frames coincide, so please make sure that the sensors are physically mounted near each other.
+According to the dataset you want to test, you can modify the parameter values of `pointcloud_topic` and `imu_topic` in trlo.launch. If an IMU is not being used, set the `trlo/imu` ROS param to false in `cfg/trlo.yaml`. However, if IMU data is available, please allow TRLO to calibrate and gravity align for three seconds before moving. Note that the current implementation assumes that LiDAR and IMU coordinate frames coincide, so please make sure that the sensors are physically mounted near each other.
 
 After sourcing the workspace, launch the TRLO ROS nodes via:
 
