@@ -1,10 +1,14 @@
-# TRLO: An Efficient LiDAR Odometry with 3D Dynamic Object Tracking and Removal
+# :cupid: TRLO: An Efficient LiDAR Odometry with 3D Dynamic Object Tracking and Removal
 
 The official implementation of TRLO (An Efficient LiDAR Odometry with 3D Dynamic Object Tracking and Removal), an accurate LiDAR odometry approach targeted for dynamic environments. TRLO can provide continuous object tracking and accurate localization results while preserving the keyframe selection mechanism in the odometry system. This work is submitted for IEEE T-IM.
 
 ![Video](./web/resources/TRLO.gif)
 
 If you think our work useful for your research, please cite:
+
+## :mega: New
+
+- Oct. 17. 2024: :smiley_cat: Commit the codes!
 
 ## :gear: Installation
 
