@@ -6,6 +6,18 @@ The official implementation of TRLO (An Efficient LiDAR Odometry with 3D Dynamic
 
 If you think our work useful for your research, please cite:
 
+```
+@misc{jia2024trloefficientlidarodometry,
+      title={TRLO: An Efficient LiDAR Odometry with 3D Dynamic Object Tracking and Removal}, 
+      author={Yanpeng Jia and Ting Wang and Xieyuanli Chen and Shiliang Shao},
+      year={2024},
+      eprint={2410.13240},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2410.13240}, 
+}
+```
+
 ## :mega: New
 
 - Oct. 17. 2024: :smiley_cat: Commit the codes!
@@ -92,7 +104,7 @@ rosservice call /robot/dlo_odom/save_traj SAVE_PAT
 
 ![mapping](./web/resources/mapping.png)
 
-For more results, please refer to our [paper]()
+For more results, please refer to our [paper](https://arxiv.org/abs/2410.13240)
 
 ## :rose: Acknowledgements
 
