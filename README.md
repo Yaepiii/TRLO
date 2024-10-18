@@ -95,7 +95,7 @@ rosservice call /robot/trlo_map/save_pcd LEAF_SIZE SAVE_PATH
 To save the trajectory in KITTI format, call the following service:
 
 ```bash
-rosservice call /robot/dlo_odom/save_traj SAVE_PAT
+rosservice call /robot/trlo_odom/save_traj SAVE_PAT
 ```
 
 ### Results
