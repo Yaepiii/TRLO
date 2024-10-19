@@ -37,6 +37,7 @@ Our system has been tested extensively on Ubuntu 20.04 Focal with ROS Noetic, al
 - OpenMP >= 4.5
 - Point Cloud Library >= 1.10.0
 - Eigen >= 3.3.7
+- Ceres 1.14.0
 - Cuda 11.3
 - Cudnn 8.2.1
 - TensorRT 8.5.3.1
