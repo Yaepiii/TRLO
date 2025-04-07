@@ -22,7 +22,7 @@ If you think our work useful for your research, please cite:
 
 ## :mega: New
 
-- Apr. 06. 2025: :tada::tada: The paper is accepted by IEEE T-IM!
+- Apr. 06. 2025: :tada: The paper is accepted by IEEE T-IM!
 - Oct. 17. 2024: :smiley_cat: Commit the codes!
 
 ## :gear: Installation
